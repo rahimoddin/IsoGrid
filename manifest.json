@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "IsoGrid",
+    "description": "Grid layout for multiple screens.",
+    "version": "1",
+    "author": "Rahimoddin Naikwade",
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "Have a good day"
+    },
+    "permissions": [
+        "activeTab"
+    ]
+}
