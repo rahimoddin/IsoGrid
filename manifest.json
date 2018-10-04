@@ -6,9 +6,28 @@
     "author": "Rahimoddin Naikwade",
     "browser_action": {
         "default_popup": "popup.html",
-        "default_title": "Have a good day"
+        "default_title": "Isobar Grid Layout",
+        "default_icon": {
+            "16": "images/get_started16.png",
+            "32": "images/get_started32.png",
+            "48": "images/get_started48.png",
+            "128": "images/get_started128.png"
+          }
     },
+    "background": {
+        "scripts": ["scripts/background.js"],
+        "persistent": false
+    },
+    "icons": {
+        "16": "images/get_started16.png",
+        "32": "images/get_started32.png",
+        "48": "images/get_started48.png",
+        "128": "images/get_started128.png"
+      },
     "permissions": [
+        "storage",
+        "declarativeContent",
         "activeTab"
-    ]
+    ],
+    "options_page": "options.html"
 }
