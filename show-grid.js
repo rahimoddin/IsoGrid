@@ -6,7 +6,9 @@ var settings = {
 		'desktopcols': 12,
 		'maxwidth': 1480,
 		'overlayPadding': 8,
-		'innerMargin': 10
+		'innerMargin': 10,
+		'mobilebreakpoint': 480,
+		'tabletbreakpoint': 840
 	}
 
 }
@@ -20,9 +22,9 @@ chrome.storage.sync.set(settings, function() {
   // Read it using the storage API
 chrome.storage.sync.get(null, function(items) {
 //message('Settings retrieved', items);
-	console.log(items.default);
+	console.log(items.user);
 	for(var key in items) {
-		console.log(key + ': ' +items[key]);
+		console.log(items[key]);
 	}
 	constructGridOvelay();
 });
@@ -62,36 +64,33 @@ function constructGridOvelay() {
 
 	document.getElementsByTagName('body')[0].appendChild(div);
 	div.appendChild(overlay);
-	//constructCSS();
+	constructCSS(settings.default);
 }
 
 
 
-function constructCSS() {
+function constructCSS(data) {
 	var percentColWidth = {};
-	percentColWidth.desktop = parseFloat(100/settings.default.desktopcols).toFixed(5)+'%';
-	percentColWidth.tablet = parseFloat(100/settings.default.tabletcols).toFixed(5)+'%';
-	percentColWidth.mobile = parseFloat(100/settings.default.mobilecols).toFixed(5)+'%';
+	percentColWidth.desktop = parseFloat(100/data.desktopcols).toFixed(5)+'%';
+	percentColWidth.tablet = parseFloat(100/data.tabletcols).toFixed(5)+'%';
+	percentColWidth.mobile = parseFloat(100/data.mobilecols).toFixed(5)+'%';
 
 	console.log('percentwidth: '+ percentColWidth.desktop);
 
 
 	var css = '.cae-grid-test .cae-overlay-col {'+
-				'display: block;'+
-				'float: left;'+
-				'height: 100%;'+
-				'width: 25%; '+
+				'width: '+percentColWidth.desktop+'; '+
 				'}'+
-				'@media only screen and (max-width: 840px) {'+
+				'@media only screen and (max-width: '+data.tabletbreakpoint+'px) {'+
 				'	.cae-grid-test .cae-overlay-col {'+
-				'  width: 12.5%; '+
-				'} '+
-				' }'+
-				' @media only screen and (max-width: 480px) {'+
-				'	.cae-grid-test .cae-overlay-col {'+
-				'	  width: 25%; '+
+				'  		width: '+percentColWidth.tablet+'; '+
 				'	} '+
-				'  }'
+				'}'+
+				'@media only screen and (max-width: '+data.mobilebreakpoint+'px) {'+
+				'	.cae-grid-test .cae-overlay-col {'+
+				'		width: '+percentColWidth.mobile+'; '+
+				'	} '+
+				'}'
 
 
     var head = document.head || document.getElementsByTagName('head')[0],

@@ -15,7 +15,14 @@ chrome.storage.sync.get(null, function(data) {
 // shows gridlayout button 
 // and inserts show-grid.js, adidas-grid.css files
 showGrid.onclick = function(element) {
-    let color = element.target.value;
+    
+    let settings = {};
+    let formData = $("form.settings").serializeArray();
+    settings.user = formData;
+    chrome.storage.sync.set(settings, function() {
+        console.log('Settings saved');
+    });
+
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.executeScript(
         {
