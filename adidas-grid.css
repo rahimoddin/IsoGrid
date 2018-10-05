@@ -5,13 +5,8 @@ Shows a responsive grid overlay on top of an existing page. Based on the Clarins
 which has a container maximum width, columns with fixed margins (gutters), variable
 number of columns between layouts, and 3 layouts: "small" (mobile), "medium" (tablet)
 and "large" (desktop).
-
-Note this is independent of the grid CSS in the site, and as such is intended as a visual
-test tool to see if elements are aligned to the grid.
-
-This is coupled with add-grid-bookmarket.html which adds the bookmarklet.
-Note the HTML that is styled by this is in js/show-grid.js.
 */
+
 /* Max width of the container which the grid is used in */
 /* Breakpoint at which the 'medium' layout ends and large (desktop) begins */
 /* Breakpoint at which the 'small' layout ends and medium (tablet) begins */
@@ -25,6 +20,7 @@ Note the HTML that is styled by this is in js/show-grid.js.
 /* Calculated width of column in medium layout */
 /* Calculated width of column in small layout */
 /* Mixin to add media query for passed maximum width */
+
 /* The grid overlay itself */
 .cae-grid-test {
   position: fixed;
@@ -32,54 +28,77 @@ Note the HTML that is styled by this is in js/show-grid.js.
   height: 100%;
   width: 100%;
   z-index: 10000;
-  /* Make sure overlay is above everything else */
   pointer-events: none;
-  /* make sure the overlay doesn't take pointer/click events */
-  /* Checkbox to switch grid on/off */ }
-  .cae-grid-test .cae-grid-overlay {
-    display: none;
-    position: static;
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    max-width: 1480px;
-    margin: auto;
-    pointer-events: none;
-    background-color: #79f3e8;
-    opacity: 0.45;
-    padding: 0 8px; }
+}
+.cae-grid-test .cae-grid-overlay {
+  display: none;
+  position: static;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  max-width: 1480px;
+  margin: auto;
+  pointer-events: none;
+  background-color: #ffffff;
+  opacity: 0.1;
+  padding: 0 8px;
+}
+.cae-grid-test .cae-overlay-col {
+  display: block;
+  float: left;
+  height: 100%;
+  width: 8.3333333333%; 
+}
+@media only screen and (max-width: 840px) {
   .cae-grid-test .cae-overlay-col {
-    display: block;
-    float: left;
-    height: 100%;
-    width: 8.3333333333%; }
-    @media only screen and (max-width: 959px) {
-      .cae-grid-test .cae-overlay-col {
-        width: 8.3333333333%; } }
-    @media only screen and (min-width: 960px) {
-      .cae-grid-test .cae-overlay-col {
-        width: 4.1666666666%; } }
-    .cae-grid-test .cae-overlay-col .cae-inner {
-      height: 100%;
-      margin-left: 1px;
-      margin-right: 1px;
-      background-color: #000;
-      opacity: 0.5; }
-    
-  .cae-grid-test .cae-grid-toggle {
-    display: none;
-    background-color: rgba(255, 0, 0, 0.7); }
-    .cae-grid-test .cae-grid-toggle:checked ~ .cae-grid-overlay {
-      /* grid enabled */
-      display: block; }
-  .cae-grid-test label[for="cae-grid-toggle"] {
-    pointer-events: auto;
-    position: fixed;
-    z-index: 10000;
-    right: 20px;
-    top: 200px;
-    width: initial;
-    padding: 5px;
-    background-color: #4CAF50;
-    border: 3px solid black;
-    color: #fff; }
+    width: 12.5%; 
+  } 
+}
+@media only screen and (max-width: 480px) {
+  .cae-grid-test .cae-overlay-col {
+    width: 25%; 
+  } 
+}
+
+.cae-grid-test .cae-overlay-col .cae-inner {
+  height: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  background-color: #000;
+  opacity: 0.5; 
+}
+@media only screen and (max-width: 840px) {
+  .cae-grid-test .cae-overlay-col .cae-inner {
+    margin-left: 12px;
+    margin-right: 12px; 
+  } 
+}
+@media only screen and (max-width: 480px) {
+  .cae-grid-test .cae-overlay-col .cae-inner {
+    margin-left: 12px;
+    margin-right: 12px; 
+  }
+}
+
+.cae-grid-test .cae-grid-toggle {
+  display: none;
+  background-color: rgba(255, 0, 0, 0.7); 
+}
+
+.cae-grid-test .cae-grid-toggle:checked ~ .cae-grid-overlay {
+  /* grid enabled */
+  display: block; 
+}
+
+.cae-grid-test label[for="cae-grid-toggle"] {
+  pointer-events: auto;
+  position: fixed;
+  z-index: 10000;
+  right: 20px;
+  top: 200px;
+  width: initial;
+  padding: 5px;
+  background-color: #4CAF50;
+  border: 3px solid black;
+  color: #fff; 
+}

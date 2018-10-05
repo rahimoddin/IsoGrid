@@ -19,11 +19,22 @@
 <h1>Hello, there.</h1>
 <button id="changeColor"></button>
     <div class="content">
-        <ul>
-            <li class="item">Desktop</li>
-            <li class="item">Tablet</li>
-            <li class="item">Mobile</li>
-        </ul>
+        <div class="settings">
+                <h2>Columns</h2>
+                <div class="mobile-content">
+                    <label for="mobile-cols">Mobile Columns #: </label>
+                    <input type="text" class="columns" id="mobile-cols">                        
+                </div>
+                <div class="tablet-content">
+                    <label for="tablet-cols">Tablet Columns #: </label>            
+                    <input type="text" class="columns" id="tablet-cols">
+                </div>
+                <div class="desktop-content">
+                    <label for="desktop-cols">Desktop Columns #: </label>
+                    <input type="text" class="columns" id="desktop-cols">
+                </div>
+        </div>
+        
 
     </div>
 
