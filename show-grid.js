@@ -1,20 +1,5 @@
-
-var settings = {
-	'defaultSettings': {
-		'desktop-cols': 4, 
-		'tablet-cols': 8, 
-		'mobile-cols': 12,
-		'maxwidth': 1480,
-		'overlayPadding': 8,
-		'innerMargin': 10,
-		'mobilebreakpoint': 480,
-		'tabletbreakpoint': 840
-	}
-
-}
-
 /** 
- * Read it using the storage API
+ * Read settings from storage
  * */ 
 chrome.storage.sync.get(null, function(items) {
 	constructGridOvelay(items.user);
@@ -27,6 +12,7 @@ chrome.storage.sync.get(null, function(items) {
  * cae-ovelay-col - column 
  * cae-inner inner area of the column
  */
+
 function constructGridOvelay(savedData) {
 	
 	/** Remove grid if exists */
@@ -63,6 +49,11 @@ function constructGridOvelay(savedData) {
 	
 	constructCSS(savedData);
 }
+
+/**
+ * construct css using user settings and insert 
+ * into the DOM
+ */
 
 function constructCSS(data) {
 
@@ -120,6 +111,4 @@ function constructCSS(data) {
 	style.appendChild(document.createTextNode(css));
 
 	head.appendChild(style);
-
-
 }
