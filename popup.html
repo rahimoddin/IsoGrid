@@ -18,33 +18,70 @@
 <body>
 <h1>Hello, there.</h1>
     <div class="content">
-        <form class="settings" id="settings">
+        <form class="settings" id="settings" autocomplete="off">
                 <h2>Columns</h2>
                 <div class="desktop-content">
-                    <label for="desktop-cols">Desktop: </label>
+                    <label for="desktop-cols">Large: </label>
                     <input type="text" class="columns" id="desktop-cols" name="desktop-cols">
                 </div>
                 <div class="tablet-content">
-                    <label for="tablet-cols">Tablet: </label>            
-                    <input type="text" class="columns" name="tablet-cols">
+                    <label for="tablet-cols">Medium: </label>            
+                    <input type="text" class="columns" id="tablet-cols">
                 </div>
                 <div class="mobile-content">
-                    <label for="mobile-cols">Mobile: </label>
-                    <input type="text" class="columns" name="mobile-cols">                        
+                    <label for="mobile-cols">Small: </label>
+                    <input type="text" class="columns" id="mobile-cols">                        
                 </div>
                 <h2>Breakpoints</h2>
+                <div class="tablet-content">
+                    <label for="max-layout-width">Max Layout Width: </label>            
+                    <input type="text" class="columns" id="max-layout-width">
+                </div>
+                <br>
+                <br>
+                <div class="tablet-content">
+                    <label for="tablet-breakpoint">Large to Medium: </label>            
+                    <input type="text" class="columns" id="tablet-breakpoint">
+                </div>
+                <br>
+                <br>
                 <div class="desktop-content">
-                    <label for="tablet-breakpoint">Mobile to Tablet: </label>
-                    <input type="text" class="columns" name="mobile-breakpoint">
+                    <label for="mobile-breakpoint">Medium to Small: </label>
+                    <input type="text" class="columns" id="mobile-breakpoint">
+                </div>
+                <h2>Gutters</h2>
+                <h3>Gutters Inner</h3>
+                <div class="tablet-content">
+                    <label for="desktop-gutter-inner">Large: </label>            
+                    <input type="text" class="columns" id="desktop-gutter-inner">
+                </div>
+                <div class="desktop-content">
+                    <label for="tablet-gutter-inner">Medium: </label>
+                    <input type="text" class="columns" id="tablet-gutter-inner">
+                </div>
+                <div class="desktop-content">
+                    <label for="mobile-gutter-inner">Small: </label>
+                    <input type="text" class="columns" id="mobile-gutter-inner">
+                </div>
+                <h3>Gutters Outer</h3>
+                <div class="tablet-content">
+                    <label for="desktop-gutter-outer">Large: </label>            
+                    <input type="text" class="columns" id="desktop-gutter-outer">
                 </div>
                 <div class="tablet-content">
-                    <label for="tablet-breakpoint">Tablet to Desktop: </label>            
-                    <input type="text" class="columns" name="tablet-breakpoint">
+                    <label for="tablet-gutter-outer">Medium: </label>            
+                    <input type="text" class="columns" id="tablet-gutter-outer">
+                </div>
+                <div class="tablet-content">
+                    <label for="mobile-gutter-outer">Small: </label>            
+                    <input type="text" class="columns" id="mobile-gutter-outer">
                 </div>
                 
-                
+                <br>
+                <br>
+                <button id="showGrid" style="width:100px; background-color:cadetblue">Show Grid</button>
         </form>
-        <button id="showGrid" style="width:100px; background-color:cadetblue">Show Grid</button>
+        
 
     </div>
 
