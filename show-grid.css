@@ -1,25 +1,10 @@
 /*
 Grid overlay
 
-Shows a responsive grid overlay on top of an existing page. Based on the Clarins v3 grid
-which has a container maximum width, columns with fixed margins (gutters), variable
+Shows a responsive grid overlay on top of an existing page. It has container maximum width, columns with fixed margins (gutters), variable
 number of columns between layouts, and 3 layouts: "small" (mobile), "medium" (tablet)
 and "large" (desktop).
 */
-
-/* Max width of the container which the grid is used in */
-/* Breakpoint at which the 'medium' layout ends and large (desktop) begins */
-/* Breakpoint at which the 'small' layout ends and medium (tablet) begins */
-/* Number of columns for the large layout */
-/* Number of columns for the medium layout */
-/* Number of columns for the small layout */
-/* Gutter between columns in the large layout */
-/* Gutter between columns in the medium layout */
-/* Gutter between columns in the small layout */
-/* Calculated width of column in large layout */
-/* Calculated width of column in medium layout */
-/* Calculated width of column in small layout */
-/* Mixin to add media query for passed maximum width */
 
 /* The grid overlay itself */
 .cae-grid-test {
