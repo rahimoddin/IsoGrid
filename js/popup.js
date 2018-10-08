@@ -1,5 +1,4 @@
 let showGrid = document.getElementById('showGrid');
-
 /**
  * reads local storage object
  * if user settings found, fill the form with user settings
@@ -32,13 +31,13 @@ chrome.storage.sync.get(null, function(data) {
         document.getElementById('mobile-breakpoint').value = 480;
         document.getElementById('max-layout-width').value = 1480;
 
-        document.getElementById('desktop--gutter-inner').value = 15;
-        document.getElementById('tablet--gutter-inner').value = 15;
-        document.getElementById('mobile--gutter-inner').value = 15;
+        document.getElementById('desktop-gutter-inner').value = 15;
+        document.getElementById('tablet-gutter-inner').value = 15;
+        document.getElementById('mobile-gutter-inner').value = 15;
 
-        document.getElementById('desktop--gutter-outer').value = 10;
-        document.getElementById('tablet--gutter-outer').value = 10;
-        document.getElementById('mobile--gutter-outer').value = 10;
+        document.getElementById('desktop-gutter-outer').value = 10;
+        document.getElementById('tablet-gutter-outer').value = 10;
+        document.getElementById('mobile-gutter-outer').value = 10;
 
         
     }

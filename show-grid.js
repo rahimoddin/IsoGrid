@@ -38,7 +38,6 @@ function constructGridOvelay(savedData) {
 	var div = document.createElement("div");
 	div.className = "cae-grid-test";
 	var numcols = Math.max(savedData['desktop-cols'], savedData['tablet-cols'], savedData['mobile-cols']);
-	console.log('cols: '+numcols)
 	var overlay = document.createElement('div');
 	overlay.className = 'cae-grid-overlay';
 
@@ -55,7 +54,7 @@ function constructGridOvelay(savedData) {
 
 	div.innerHTML = '\
 		<!-- Show a grid over lay (transparent)--> \
-		<input type="checkbox" id="cae-grid-toggle" class="cae-grid-toggle" /> \
+		<input type="checkbox" id="cae-grid-toggle" class="cae-grid-toggle" checked/> \
 		<label for="cae-grid-toggle">Toggle Grid</label> \
 	';
 
@@ -65,8 +64,6 @@ function constructGridOvelay(savedData) {
 	constructCSS(savedData);
 }
 
-
-
 function constructCSS(data) {
 
 	var percentColWidth = {};
@@ -74,12 +71,6 @@ function constructCSS(data) {
 	percentColWidth.tablet = parseFloat(100/data['tablet-cols']).toFixed(5)+'%';
 	percentColWidth.mobile = parseFloat(100/data['mobile-cols']).toFixed(5)+'%';
 
-	console.log('showing percent col width: ');
-	for(var key in percentColWidth) {
-		console.log(percentColWidth[key]);
-	}
-
-console.log('cols percent: '+ percentColWidth.desktop);
 	var css = 	'.cae-grid-test .cae-grid-overlay {'+
 				'	max-width: '+data['max-layout-width']+'px;'+
 				'	padding: 0 '+data['desktop-gutter-outer']+'px;'+
