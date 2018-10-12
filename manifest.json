@@ -1,17 +1,17 @@
 {
     "manifest_version": 2,
     "name": "IsoGrid",
-    "description": "Grid layout for multiple screens.",
+    "description": "Grid layout for multiple breakpoints.",
     "version": "1",
     "author": "Rahimoddin Naikwade",
     "browser_action": {
         "default_popup": "popup.html",
         "default_title": "Isobar Grid Layout",
         "default_icon": {
-            "16": "images/get_started16.png",
-            "32": "images/get_started32.png",
-            "48": "images/get_started48.png",
-            "128": "images/get_started128.png"
+            "16": "images/isogrid_16.png",
+            "32": "images/isogrid_32.png",
+            "48": "images/isogrid_48.png",
+            "128": "images/isogrid_128.png"
           }
     },
     "background": {
@@ -19,10 +19,10 @@
         "persistent": false
     },
     "icons": {
-        "16": "images/get_started16.png",
-        "32": "images/get_started32.png",
-        "48": "images/get_started48.png",
-        "128": "images/get_started128.png"
+        "16": "images/isogrid_16.png",
+        "32": "images/isogrid_32.png",
+        "48": "images/isogrid_48.png",
+        "128": "images/isogrid_128.png"
       },
     "permissions": [
         "storage",
